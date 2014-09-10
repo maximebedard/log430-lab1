@@ -142,14 +142,25 @@ public class ResourceAssignment {
 					if (resource != null) {
 						display.displayProjectList(projectList.getListOfProjects());
 						project = menu.pickProject(projectList.getListOfProjects());
+
+
 						if (project != null) {
-							project.assignResource(resource);
-							resource.assignProject(project);
+
+                            int workLoad =  resource.getWorkLoad(project);
+
+                            if(workLoad <= 100){
+                                project.assignResource(resource);
+                                resource.assignProject(project);
+
+                            } else{
+                                System.out.println("Cannot assign resource '" + resource.getID() + "' to project '" +  project.getID() +"'. User workload exceeds 100%" );
+
+                            }
+
 						} // if
 					} // if
 
 					break;
-
 				case 'X':
 
 				case 'x':

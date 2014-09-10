@@ -121,4 +121,38 @@ public class Resource {
 		return projectsAssignedList;
 	}
 
+    //Method to get the total workload of a ressource.
+    //We calculate the ressource occupation and add it all up.
+    //Returns the work load.
+    public int getWorkLoad(Project toBeAssignedProject){
+
+        Project p = null;
+        int ressourceOccupation = toBeAssignedProject.getRessourceOccupation();
+
+      //  ressourceOccupation += countRessourceOccupation(this.alreadyAssignedProjectList);
+        ressourceOccupation += countRessourceOccupation(this.projectsAssignedList);
+
+
+        return ressourceOccupation;
+    }
+
+    private int countRessourceOccupation(ProjectList pl){
+
+        int ressourceOccupation = 0;
+
+        Project p = null;
+
+        do {
+            p = pl.getNextProject();
+
+            if( p != null) {
+                ressourceOccupation += p.getRessourceOccupation();
+            }
+
+        }
+        while(p != null);
+
+        return ressourceOccupation;
+    }
+
 } // Resource class
