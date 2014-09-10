@@ -88,7 +88,7 @@ public class ResourceAssignment {
 			 */
 
 			ProjectReader projectList = new ProjectReader(argv[0]);
-			ResourceReader resourceList = new ResourceReader(argv[1]);
+			ResourceReader resourceList = new ResourceReader(argv[1], projectList.getListOfProjects());
 
 			if ((projectList.getListOfProjects() == null)
 					|| (resourceList.getListOfResources() == null)) {
@@ -103,42 +103,43 @@ public class ResourceAssignment {
 			while (!done) {
 
 				userChoice = menu.mainMenu();
-				switch (userChoice) {
+                switch (userChoice) {
 
-				case '1':
+                    case '1':
 
-					display.displayResourceList(resourceList.getListOfResources());
-					break;
+                        display.displayResourceList(resourceList.getListOfResources());
+                        break;
 
-				case '2':
+                    case '2':
 
-					display.displayProjectList(projectList.getListOfProjects());
-					break;
+                        display.displayProjectList(projectList.getListOfProjects());
+                        break;
 
-				case '3':
+                    case '3':
 
-					display.displayResourceList(resourceList.getListOfResources());
-					resource = menu.pickResource(resourceList.getListOfResources());
-					if (resource != null) {
-						display.displayProjectsAssignedToResource(resource);
-					} // if
-					break;
+                        display.displayResourceList(resourceList.getListOfResources());
+                        resource = menu.pickResource(resourceList.getListOfResources());
+                        if (resource != null) {
+                            display.displayProjectsAssignedToResource(resource);
+                        } // if
+                        break;
 
-				case '4':
+                    case '4':
 
-					display.displayProjectList(projectList.getListOfProjects());
-					project = menu.pickProject(projectList.getListOfProjects());
+                        display.displayProjectList(projectList.getListOfProjects());
+                        project = menu.pickProject(projectList.getListOfProjects());
 
-					if (project != null) {
-						display.displayResourcesAssignedToProject(project);
-					} // if
-					break;
+                        if (project != null) {
+                            display.displayResourcesAssignedToProject(project);
+                        } // if
+                        break;
 
-				case '5':
+                    case '5':
 
-					display.displayResourceList(resourceList.getListOfResources());
-					resource = menu.pickResource(resourceList.getListOfResources());
+                        display.displayResourceList(resourceList.getListOfResources());
+                        resource = menu.pickResource(resourceList.getListOfResources());
 
+<<<<<<< HEAD
 					if (resource != null) {
 						display.displayProjectList(projectList.getListOfProjects());
 						project = menu.pickProject(projectList.getListOfProjects());
@@ -162,11 +163,37 @@ public class ResourceAssignment {
 
 					break;
 				case 'X':
+=======
+                        if (resource != null) {
+                            display.displayProjectList(projectList.getListOfProjects());
+                            project = menu.pickProject(projectList.getListOfProjects());
+                            if (project != null) {
+                                project.assignResource(resource);
+                                resource.assignProject(project);
+                            } // if
+                        } // if
 
-				case 'x':
-					done = true;
-				} // switch
-			} // while
-		} // if
+                        break;
+
+                    case '6':
+                        display.displayResourceList(resourceList.getListOfResources());
+                        resource = menu.pickResource(resourceList.getListOfResources());
+>>>>>>> 3506d498c0ccf62f76b1b4d317d3ea80ad2729ab
+
+                        if(resource != null)
+                        {
+                            display.displayProjectList(resource.getPreviouslyAssignedProjectList());
+
+                        }
+
+                        break;
+
+                    case 'X':
+
+                    case 'x':
+                        done = true;
+                } // switch
+            } // while
+        } // if
 	} // main
 } // Class

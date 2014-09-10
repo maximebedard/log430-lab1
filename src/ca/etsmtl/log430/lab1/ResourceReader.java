@@ -49,7 +49,8 @@ package ca.etsmtl.log430.lab1;
 
 public class ResourceReader extends LineOfTextFileReader {
 
-	/**
+    private final ProjectList allProjects;
+    /**
 	 * The list of drivers.
 	 */
 	private ResourceList listOfResources = new ResourceList();
@@ -58,11 +59,13 @@ public class ResourceReader extends LineOfTextFileReader {
 
 		listOfResources = null;
 
-	} // Constructor #1
+        allProjects = null;
+    } // Constructor #1
 
-	public ResourceReader(String inputFile) {
+	public ResourceReader(String inputFile, ProjectList allProjects) {
+        this.allProjects = allProjects;
 
-		listOfResources = readResourceListFromFile(inputFile);
+        listOfResources = readResourceListFromFile(inputFile);
 
 	} // Constructor #2
 
@@ -198,7 +201,16 @@ public class ResourceReader extends LineOfTextFileReader {
 				// This is where the projects are added to the list of projects
 				// previously assigned to this resource. Note that there are
 				// no details other than the project ID.
-				resource.getPreviouslyAssignedProjectList().addProject(new Project(token));
+
+                Project previouslyAssignedProject = allProjects.findProjectByID(token);
+
+                if(previouslyAssignedProject == null) {
+                    resource.getPreviouslyAssignedProjectList().addProject(new Project(token));
+                }
+                else {
+                    resource.getPreviouslyAssignedProjectList().addProject(previouslyAssignedProject);
+                }
+
 				frontIndex = backIndex + 1;
 				break;
 
