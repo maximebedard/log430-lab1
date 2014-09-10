@@ -50,28 +50,13 @@ public class Menus {
 			System.out.println("3) List projects currently assigned to a resource");
 			System.out.println("4) List resources currently assigned to a project");
 			System.out.println("5) Assign a resource to a project");
-<<<<<<< HEAD
             System.out.println("6) List projects already assigned to a resource (before session)");
-=======
             System.out.println("7) List all roles assigned to a specific project"); // Afficher tous les rôles ayant été assignés à un projet spécifique");
->>>>>>> origin/Modifcation-2
 			System.out.println("X) Exit");
 			System.out.print("\n\nEnter your choice and press return >> ");
 
 			userChoice = terminal.keyboardReadChar();
 
-<<<<<<< HEAD
-			if ((userChoice != 'X') && (userChoice != 'x')
-					&& (userChoice < '1') && (userChoice > '7')) {
-
-				System.out.print("\n\n*** Invalid Choice:: " + userChoice
-						+ " ***");
-
-			} else {
-
-				error = false;
-
-=======
             java.util.List<Character> validChars = Arrays.asList('X', 'x', '1', '2', '3', '4', '5', '6', '7');
             if (validChars.contains(userChoice)) {
                 error = false;
@@ -79,7 +64,6 @@ public class Menus {
             else {
                 System.out.print("\n\n*** Invalid Choice:: " + userChoice
                         + " ***");
->>>>>>> origin/Modifcation-2
 			} // if
 
 		} // while
