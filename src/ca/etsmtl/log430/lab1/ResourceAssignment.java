@@ -149,7 +149,15 @@ public class ResourceAssignment {
 					} // if
 
 					break;
+                case '7':
+                    display.displayProjectList(projectList.getListOfProjects());
+                    project = menu.pickProject(projectList.getListOfProjects());
 
+                    if (project != null) {
+                        display.displayRolesOfProject(project, resourceList.getListOfResources());
+                    }
+
+                    break;
 				case 'X':
 
 				case 'x':
