@@ -129,7 +129,7 @@ public class Resource {
         Project p = null;
         int ressourceOccupation = toBeAssignedProject.getRessourceOccupation();
 
-      //  ressourceOccupation += countRessourceOccupation(this.alreadyAssignedProjectList);
+        ressourceOccupation += countRessourceOccupation(this.alreadyAssignedProjectList);
         ressourceOccupation += countRessourceOccupation(this.projectsAssignedList);
 
 
