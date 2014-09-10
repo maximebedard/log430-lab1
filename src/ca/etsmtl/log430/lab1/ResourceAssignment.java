@@ -161,7 +161,11 @@ public class ResourceAssignment {
                         } // if
 
 					break;
+                case '7':
+                    display.displayProjectList(projectList.getListOfProjects());
+                    project = menu.pickProject(projectList.getListOfProjects());
 
+<<<<<<< HEAD
                     case '6':
                         display.displayResourceList(resourceList.getListOfResources());
                         resource = menu.pickResource(resourceList.getListOfResources());
@@ -174,6 +178,14 @@ public class ResourceAssignment {
                         break;
 
                     case 'X':
+=======
+                    if (project != null) {
+                        display.displayRolesOfProject(project, resourceList.getListOfResources());
+                    }
+
+                    break;
+				case 'X':
+>>>>>>> origin/Modifcation-2
 
                     case 'x':
                         done = true;

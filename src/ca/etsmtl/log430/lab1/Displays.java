@@ -239,4 +239,56 @@ public class Displays {
 
 	}
 
+    public void displayRolesOfProject(Project project, ResourceList resourceList) {
+
+        System.out.println();
+        this.displayProject(project);
+
+        System.out.println();
+        resourceList.vectorIndex = 0;
+        this.displayRolesOfPreviouslyAssignedProjectList(project, resourceList);
+
+        System.out.println();
+
+        resourceList.vectorIndex = 0;
+        this.displayRolesOfCurrentlyAssignedProjectList(project, resourceList);
+    }
+
+    public void displayRolesOfPreviouslyAssignedProjectList(Project project, ResourceList resourceList)
+    {
+        System.out.println("Previously assigned roles : \n");
+        Resource currentResource = null;
+        java.util.List<String> distinctRoleList = new java.util.ArrayList<String>();
+
+        while ((currentResource = resourceList.getNextResource()) != null)
+        {
+            if(currentResource.getPreviouslyAssignedProjectList().findProject(project))
+            {
+                if (!distinctRoleList.contains(currentResource.getRole()))
+                {
+                    distinctRoleList.add(currentResource.getRole());
+                    System.out.println(currentResource.getRole());
+                }
+            }
+        }
+    }
+
+    public void displayRolesOfCurrentlyAssignedProjectList(Project project, ResourceList resourceList)
+    {
+        System.out.println("Currently assigned roles : \n");
+        Resource currentResource = null;
+        java.util.List<String> distinctRoleList = new java.util.ArrayList<String>();
+
+        while ((currentResource = resourceList.getNextResource()) != null)
+        {
+            if(currentResource.getProjectsAssigned().findProject(project))
+            {
+                if (!distinctRoleList.contains(currentResource.getRole()))
+                {
+                    distinctRoleList.add(currentResource.getRole());
+                    System.out.println(currentResource.getRole());
+                }
+            }
+        }
+    }
 } // Display
