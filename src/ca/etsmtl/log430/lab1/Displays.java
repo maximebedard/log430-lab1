@@ -273,21 +273,33 @@ public class Displays {
 
 	}
 
+    /**
+     * Displays roles associated to a specific project.
+     * Displays the associated project's roles before and during the current execution.
+     *
+     * @param project
+     * @param resourceList
+     */
     public void displayRolesOfProject(Project project, ResourceList resourceList) {
 
         System.out.println();
         this.displayProject(project);
 
         System.out.println();
-        resourceList.vectorIndex = 0;
+        resourceList.goToFrontOfList();
         this.displayRolesOfPreviouslyAssignedProjectList(project, resourceList);
 
         System.out.println();
-
-        resourceList.vectorIndex = 0;
+        resourceList.goToFrontOfList();
         this.displayRolesOfCurrentlyAssignedProjectList(project, resourceList);
     }
 
+    /**
+     * Displays roles associated to a specific project before the current execution.
+     *
+     * @param project
+     * @param resourceList
+     */
     public void displayRolesOfPreviouslyAssignedProjectList(Project project, ResourceList resourceList)
     {
         System.out.println("Previously assigned roles : \n");
@@ -307,6 +319,12 @@ public class Displays {
         }
     }
 
+    /**
+     * Displays roles associated to a specific project assigned during the current execution.
+     *
+     * @param project
+     * @param resourceList
+     */
     public void displayRolesOfCurrentlyAssignedProjectList(Project project, ResourceList resourceList)
     {
         System.out.println("Currently assigned roles : \n");
