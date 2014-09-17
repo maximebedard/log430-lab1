@@ -146,9 +146,7 @@ public class ResourceAssignment {
 
                             if (project != null) {
 
-                                int workLoad =  resource.getWorkLoad(project);
-
-                                if(workLoad <= 100){
+                                if(resource.canAcceptMoreWork(project)){
                                     project.assignResource(resource);
                                     resource.assignProject(project);
 

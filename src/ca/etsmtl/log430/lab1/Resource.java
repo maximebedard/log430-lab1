@@ -124,16 +124,21 @@ public class Resource {
     //Method to get the total workload of a ressource.
     //We calculate the ressource occupation and add it all up.
     //Returns the work load.
-    public int getWorkLoad(Project toBeAssignedProject){
+    public boolean canAcceptMoreWork(Project toBeAssignedProject){
 
         Project p = null;
         int ressourceOccupation = toBeAssignedProject.getRessourceOccupation();
+        boolean canAcceptWork = true;
+
 
         ressourceOccupation += countRessourceOccupation(this.alreadyAssignedProjectList);
         ressourceOccupation += countRessourceOccupation(this.projectsAssignedList);
 
+        if(ressourceOccupation > 100){
+            canAcceptWork = false;
+        }
 
-        return ressourceOccupation;
+        return canAcceptWork;
     }
 
     private int countRessourceOccupation(ProjectList pl){
@@ -141,6 +146,8 @@ public class Resource {
         int ressourceOccupation = 0;
 
         Project p = null;
+
+        pl.goToFrontOfList();
 
         do {
             p = pl.getNextProject();
@@ -151,6 +158,7 @@ public class Resource {
 
         }
         while(p != null);
+
 
         return ressourceOccupation;
     }

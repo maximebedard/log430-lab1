@@ -130,15 +130,12 @@ public class Project {
 		return resourcesAssigned;
 	}
 
-
-
     public int getRessourceOccupation(){
         int ressourceOccupation = 0;
         this.getEndDate();
 
         try {
             Date today = new Date();
-            System.out.println(this.getID());
 
             Date projectEndDate = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH).parse(this.getEndDate());
             Date projectStartDate = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH).parse(this.getStartDate());
