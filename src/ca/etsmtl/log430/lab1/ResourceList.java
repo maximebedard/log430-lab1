@@ -81,6 +81,7 @@ public class ResourceList extends List {
 						currentObject.getID()) == 0) {
 
 					result = true;
+                    done = true;
 
 				} // if
 
