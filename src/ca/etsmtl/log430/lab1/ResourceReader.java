@@ -202,13 +202,15 @@ public class ResourceReader extends LineOfTextFileReader {
 				// previously assigned to this resource. Note that there are
 				// no details other than the project ID.
 
-                Project previouslyAssignedProject = allProjects.findProjectByID(token);
+                if(token != null && !token.isEmpty()) {
 
-                if(previouslyAssignedProject == null) {
-                    resource.getPreviouslyAssignedProjectList().addProject(new Project(token));
-                }
-                else {
-                    resource.getPreviouslyAssignedProjectList().addProject(previouslyAssignedProject);
+                    Project previouslyAssignedProject = allProjects.findProjectByID(token);
+
+                    if (previouslyAssignedProject == null) {
+                        resource.getPreviouslyAssignedProjectList().addProject(new Project(token));
+                    } else {
+                        resource.getPreviouslyAssignedProjectList().addProject(previouslyAssignedProject);
+                    }
                 }
 
 				frontIndex = backIndex + 1;

@@ -166,8 +166,7 @@ public class ResourceAssignment {
                         resource = menu.pickResource(resourceList.getListOfResources());
                         if(resource != null)
                         {
-                            display.displayProjectList(resource.getPreviouslyAssignedProjectList());
-
+                            display.displayProjectsAlreadyAssignedToResource(resource);
                         }
 
                         break;
