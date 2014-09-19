@@ -61,6 +61,11 @@ public class List {
 
 	} // Append Item
 
+    public int count()
+    {
+        return this.itemList.size();
+    }
+
 	/**
 	 * Gets the Object from the list that is currently being pointed to by
 	 * vectorIndex. Casting from Object to specific class is handled in the
