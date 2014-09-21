@@ -1,4 +1,4 @@
-package ca.etsmtl.log430.lab1;
+package ca.etsmtl.log430.lab1.donnees;
 
 /**
  * This class defines the Resource object for the system. Besides the basic

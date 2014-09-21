@@ -1,4 +1,4 @@
-package ca.etsmtl.log430.lab1;
+package ca.etsmtl.log430.lab1.donnees;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

@@ -1,4 +1,9 @@
-package ca.etsmtl.log430.lab1;
+package ca.etsmtl.log430.lab1.gestion;
+
+import ca.etsmtl.log430.lab1.donnees.Project;
+import ca.etsmtl.log430.lab1.donnees.ProjectList;
+import ca.etsmtl.log430.lab1.donnees.Resource;
+import ca.etsmtl.log430.lab1.donnees.ResourceList;
 
 /**
  * Reads from the InputFile and instantiates the Resource objects in the system.

@@ -1,5 +1,7 @@
 package ca.etsmtl.log430.lab1;
 
+import ca.etsmtl.log430.lab1.donnees.Resource;
+import ca.etsmtl.log430.lab1.donnees.ResourceList;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -110,7 +112,7 @@ public class ResourceListTest {
 
         assertEquals(3, resourceList.count());
         assertTrue(found);
-        assertEquals(2, resourceList.vectorIndex);
+        //assertEquals(2, resourceList.vectorIndex);
     }
 
     @Test
@@ -142,7 +144,7 @@ public class ResourceListTest {
         Resource returnedResource = resourceList.findResourceByID("RES02");
 
         assertEquals(3, resourceList.count());
-        assertEquals(2, resourceList.vectorIndex);
+        //assertEquals(2, resourceList.vectorIndex);
 
         assertEquals("RES02", returnedResource.getID());
         assertEquals("Bonjour", returnedResource.getFirstName());

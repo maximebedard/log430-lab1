@@ -1,4 +1,9 @@
-package ca.etsmtl.log430.lab1;
+package ca.etsmtl.log430.lab1.presentation;
+
+import ca.etsmtl.log430.lab1.donnees.Project;
+import ca.etsmtl.log430.lab1.donnees.Resource;
+import ca.etsmtl.log430.lab1.gestion.ProjectReader;
+import ca.etsmtl.log430.lab1.gestion.ResourceReader;
 
 /**
  * Main class for assignment 1 for LOG430, Architecture logicielle.

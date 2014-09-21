@@ -1,5 +1,7 @@
 package ca.etsmtl.log430.lab1;
 
+import ca.etsmtl.log430.lab1.donnees.Project;
+import ca.etsmtl.log430.lab1.donnees.Resource;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
