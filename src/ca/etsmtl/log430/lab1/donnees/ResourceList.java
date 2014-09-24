@@ -1,7 +1,5 @@
 package ca.etsmtl.log430.lab1.donnees;
 
-import ca.etsmtl.log430.lab1.gestion.List;
-
 /**
  * This class is used by various other classes that need to keep a list of
  * resources on hand. It extends the List class which provides the basic
