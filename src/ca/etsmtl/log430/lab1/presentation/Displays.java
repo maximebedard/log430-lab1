@@ -286,9 +286,9 @@ public class Displays {
      * @param resourceList
      */
     public void displayRolesOfProject(Project project, ResourceList resourceList) {
-
+        /*
         System.out.println();
-        this.displayProject(project);
+        this.displayProject(project); */
 
         System.out.println();
         resourceList.goToFrontOfList();
@@ -307,7 +307,11 @@ public class Displays {
      */
     public void displayRolesOfPreviouslyAssignedProjectList(Project project, ResourceList resourceList)
     {
-        System.out.println("Previously assigned roles : \n");
+        System.out.println("Previously assigned roles of : " +
+                            project.getID() + " " +
+                            project.getProjectName());
+        System.out.println("========================================================= ");
+
         Resource currentResource = null;
         java.util.List<String> distinctRoleList = new java.util.ArrayList<String>();
 
@@ -322,6 +326,11 @@ public class Displays {
                 }
             }
         }
+
+        if (distinctRoleList.size() == 0)
+        {
+            System.out.println("No roles to display.");
+        }
     }
 
     /**
@@ -332,7 +341,11 @@ public class Displays {
      */
     public void displayRolesOfCurrentlyAssignedProjectList(Project project, ResourceList resourceList)
     {
-        System.out.println("Currently assigned roles : \n");
+        System.out.println("Currently assigned roles of :  " +
+                            project.getID() + " " +
+                            project.getProjectName());
+        System.out.println("========================================================= ");
+
         Resource currentResource = null;
         java.util.List<String> distinctRoleList = new java.util.ArrayList<String>();
 
@@ -346,6 +359,11 @@ public class Displays {
                     System.out.println(currentResource.getRole());
                 }
             }
+        }
+
+        if (distinctRoleList.size() == 0)
+        {
+            System.out.println("No roles to display.");
         }
     }
 } // Display
