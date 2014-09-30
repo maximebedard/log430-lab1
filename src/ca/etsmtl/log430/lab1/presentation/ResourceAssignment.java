@@ -10,7 +10,7 @@ import ca.etsmtl.log430.lab1.gestion.ResourceReader;
  * 
  * <pre>
  * <b>Pseudo Code:</b>
- * 
+ *
  *   Instantiate lists
  *   do until done
  *     Present Menu
@@ -156,8 +156,9 @@ public class ResourceAssignment {
                                     resource.assignProject(project);
 
                                 } else{
-                                    System.out.println("Cannot assign resource '" + resource.getID() + "' to project '" +  project.getID() +"'. User workload exceeds 100%" );
-
+                                    System.out.println("** WARNING **" );
+                                    System.out.println("Cannot assign resource '" + resource.getID() + "' to project '" +  project.getID() +"'. User workload would exceeds 100%" );
+                                    System.out.println("** WARNING **" );
                                 }
 
                             } // if

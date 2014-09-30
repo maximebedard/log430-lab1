@@ -2,12 +2,13 @@ package ca.etsmtl.log430.lab1;
 
 import ca.etsmtl.log430.lab1.donnees.Project;
 import ca.etsmtl.log430.lab1.donnees.Resource;
+    /*
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.*;        */
 
 public class ResourceTest {
-
+   /*
     @Test
     public void testAssignProject() throws Exception {
 
@@ -149,5 +150,5 @@ public class ResourceTest {
 
         //r2
 
-    }
+    }  */
 }

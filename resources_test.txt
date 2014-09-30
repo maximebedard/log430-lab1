@@ -7,3 +7,6 @@ R2 Test Man2 TST
 R3 Test Man3 TST
 R4 Test Man4 TST T4P1
 R5 Test Man5 TST T5PE
+R6 Test Man6 TST
+R7 Test Man7 TST T7P1
+R8 Test Man8 TST T8PE T8P1
